@@ -2,8 +2,7 @@ package ru.avalon.java.j20.labs.tasks;
 
 import ru.avalon.java.j20.labs.Task;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Задание №2
@@ -12,7 +11,6 @@ import java.io.IOException;
  * в текстовом режиме".
  */
 public class Task2 implements Task {
-
     /**
      * {@inheritDoc}
      */
@@ -22,27 +20,22 @@ public class Task2 implements Task {
         File output = new File("countries_text_mode_output.txt");
         String text = read(input);
         write(output, text);
-
         /*
          * TODO(Студент): Выполнить задание №2
          *
          * 1. Реализовать метод read.
-         *
          *    При чтении файла следует пользоваться типами данных:
          *    Reader, FileReader.
-         *
          *    Для сохранения прочитанных данных следует пользоваться
          *    классом StringBuilder.
          *
          * 2. Реализовать метод write.
-         *
          *    При реализации метода следует пользоваться типами данных:
          *    Writer и FileWriter.
          *
          * 3. С использованием отладчика проверить корректность работы программы.
          */
     }
-
     /**
      * Выполняет чтение указанного файла в текстовом режиме.
      *
@@ -55,8 +48,8 @@ public class Task2 implements Task {
      */
     private String read(File file) throws IOException {
         throw new UnsupportedOperationException("Not implement yet!");
+        
     }
-
     /**
      * Выполняет запись текстоых данных в файл в текстовом
      * режиме.
