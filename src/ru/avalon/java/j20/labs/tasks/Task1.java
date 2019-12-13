@@ -21,8 +21,6 @@ public class Task1 implements Task {
      */
     @Override
     public void run() throws IOException {
-        System.out.println("Выполнение task1");
-        Logger.getLogger(Task1.class.getName()).log(Level.SEVERE, "проверка");
         File input = new File("C:/Users/Yurii/Documents/NetBeansProjects/Lab2120/lab-2-Urarat325/assets/countries.txt");
         File output = new File("countries_binary_mode_output.txt");
         String text = read(input);
@@ -63,7 +61,8 @@ public class Task1 implements Task {
             while ((length = fils.read(buffer)) != -1){
                 uno.write(buffer, 0, length);
             }
-            result = uno.toString();   
+            result = uno.toString(); 
+            //System.out.print(result);
         }
         catch (FileNotFoundException e){
             System.out.println("File not found");
