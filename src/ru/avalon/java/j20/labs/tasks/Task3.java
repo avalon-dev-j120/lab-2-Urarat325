@@ -21,7 +21,7 @@ public class Task3 implements Task {
 
     @Override
     public void run() throws IOException {
-        File input = new File("../assets/countries.txt");
+        File input = new File("C:/Users/Yurii/Documents/NetBeansProjects/Lab2120/lab-2-Urarat325/assets/countries.txt");
         File output = new File("countries_buffered_mode_output.txt");
         Collection<String> lines = read(input);
         write(output, lines);
