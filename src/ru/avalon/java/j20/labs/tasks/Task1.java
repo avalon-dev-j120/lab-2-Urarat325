@@ -23,7 +23,7 @@ public class Task1 implements Task {
     public void run() throws IOException {
         System.out.println("Выполнение task1");
         Logger.getLogger(Task1.class.getName()).log(Level.SEVERE, "проверка");
-        File input = new File("assets/countries.txt");
+        File input = new File("../assets/countries.txt");
         File output = new File("countries_binary_mode_output.txt");
         String text = read(input);
         write(output, text);
