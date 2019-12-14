@@ -25,7 +25,9 @@ public class Country {
         this.code = code;
         this.name = name;
     }
-
+    public String toString(){
+        return this.code+":"+this.name;
+    }
     /**
      * Возвращает код страны.
      *
@@ -58,9 +60,9 @@ public class Country {
      * имеет неверный формат.
      */
     public static Country valueOf(String text) throws ParseException {
-        /*
-         * TODO(Студент): Реализовать метод valueOf класса Country
-         */
-        throw new UnsupportedOperationException("Not implemented yet!");
+       
+        String[] index = text.split(":");
+        Country count = new Country(index[0], index[1]);
+        return count;
     }
 }

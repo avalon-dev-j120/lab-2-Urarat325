@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import ru.avalon.java.j20.labs.Task;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -51,28 +50,40 @@ public class Task3 implements Task {
      */
     private Collection<String> read(File file) throws IOException {
 
+        Collection<String> result = new ArrayList<>(24);
         try (BufferedReader buf = new BufferedReader(new FileReader(file), 256)) {
-            ByteArrayOutputStream uno = new ByteArrayOutputStream(256) {
-                int length = 0;
-                while ((length = fils.read(buf)) != -1){
-                    
-                }
+
+            String length;
+            while ((length = buf.readLine()) != null) {
+                result.add(length);
             }
         }
-            /**
-             * Выполняет запись коллекции строковых элементов в файл.
-             *
-             * <p>
-             * Каждый элемент коллекции должен быть записан в файл отдельной
-             * строкой.
-             *
-             * @param file файл
-             * @param collection коллекция строк
-             * @throws IOException в случае ошибок ввода-вывода.
-             */
-    
+        return result;
+    }
+
+    /**
+     * Выполняет запись коллекции строковых элементов в файл.
+     *
+     * <p>
+     * Каждый элемент коллекции должен быть записан в файл отдельной строкой.
+     *
+     * @param file файл
+     * @param collection коллекция строк
+     * @throws IOException в случае ошибок ввода-вывода.
+     */
 
     private void write(File file, Collection<String> collection) throws IOException {
-        throw new UnsupportedOperationException("Not implemented yet!");
+
+        try (PrintWriter result = new PrintWriter(file)) {
+            for (String buf : collection) {
+                result.println(buf);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("IO Exception");
+            e.printStackTrace();
+        }
     }
 }

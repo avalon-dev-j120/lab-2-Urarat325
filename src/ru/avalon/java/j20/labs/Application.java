@@ -5,22 +5,20 @@ import ru.avalon.java.j20.labs.tasks.*;
 /**
  * Лабораторная работа №2
  *
- * по курсу: "DEV-J20. Программирование на платформе Java.
- * Стандартные пакеты"
+ * по курсу: "DEV-J20. Программирование на платформе Java. Стандартные пакеты"
  */
 public class Application {
 
     /**
-     * Задачи, которые следует выполнить в рамках
-     * лабораторной работы.
+     * Задачи, которые следует выполнить в рамках лабораторной работы.
      */
     private static final Task[] tasks = {
-            new Task1(),
-            new Task2(),
-            new Task3(),
-            new Task4(),
-            new Task5(),
-            new Task6()
+        new Task1(),
+        new Task2(),
+        new Task3(),
+        new Task4(),
+        new Task5(),
+        new Task6()
     };
 
     /**
@@ -37,6 +35,8 @@ public class Application {
          * порядок и/или закомментировать любой из элементов
          * массива.
          */
-        for (Task task : tasks) task.run();
+        for (Task task : tasks) {
+            task.run();
+        }
     }
 }

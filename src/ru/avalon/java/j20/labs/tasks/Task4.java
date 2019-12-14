@@ -1,14 +1,19 @@
 package ru.avalon.java.j20.labs.tasks;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import ru.avalon.java.j20.labs.Task;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
  * Задание №4
  *
- * <p>Тема: "Потоковый ввод-вывод. Чтение файлов конфигурации".
+ * <p>
+ * Тема: "Потоковый ввод-вывод. Чтение файлов конфигурации".
  */
 public class Task4 implements Task {
 
@@ -29,13 +34,18 @@ public class Task4 implements Task {
     }
 
     /**
-     * Выполняет чтение файла конфигураций описанного
-     * параметром {@code path}.
+     * Выполняет чтение файла конфигураций описанного параметром {@code path}.
      *
      * @param path путь к конфигурации
      * @return новый экземпляр типа {@link Properties}
      */
-    private Properties read(String path) {
-        throw new UnsupportedOperationException("Not implement yet!");
+    private Properties read(String path) throws FileNotFoundException, IOException {
+        String sim;
+        Properties proper = new Properties();
+        InputStream pop = ClassLoader.getSystemResourceAsStream("resources/database.properties");
+        {
+            proper.load(pop);
+        }
+        return proper;
     }
 }
