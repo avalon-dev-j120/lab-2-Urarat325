@@ -21,7 +21,6 @@ public class Task5 implements Task {
         
         ResourceBundle rBDef = read("resources.strings.titles");
         ResourceBundle rBRu = read("resources.strings.titles",new Locale("ru"));
-        
         /*
          * TODO(Студент): Выполнить задание №5
          *
@@ -36,7 +35,6 @@ public class Task5 implements Task {
          *    проверить корректность работы программы.
          */
     }
-
     /**
      * Выполняет чтение локализованных ресурсов с использованием
      * локализации по умолчанию.
@@ -47,7 +45,6 @@ public class Task5 implements Task {
     private ResourceBundle read(String path) {
         return read(path,Locale.ENGLISH);
     }
-
     /**
      * Выполняет чтение локализованных ресурсов.
      *
@@ -56,7 +53,8 @@ public class Task5 implements Task {
      */
     private ResourceBundle read(String path, Locale locale) {
         ResourceBundle rb = ResourceBundle.getBundle(path, locale);
+        
+        System.out.println(rb.getString("menu.file"));
         return rb;
-        System.out.println(rb);
     }
 }
