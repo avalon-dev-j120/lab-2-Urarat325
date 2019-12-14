@@ -46,6 +46,7 @@ public class Task4 implements Task {
         {
             proper.load(pop);
         }
+        System.out.println(proper.getProperty("db.oracle.driver.class"));
         return proper;
     }
 }
